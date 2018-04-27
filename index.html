@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <title>@juztcode/angular-auth sample project</title>
+  <script>
+    document.write('<base href="' + document.location + '" />');
+  </script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy"
+    crossorigin="anonymous">
+  <!-- Polyfills -->
+  <script src="https://unpkg.com/core-js/client/shim.min.js"></script>
+  <script src="https://unpkg.com/zone.js@0.7.4?main=browser"></script>
+  <script src="https://unpkg.com/systemjs@0.19.39/dist/system.src.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/juztcode/console-to-html@0.0.1/src/console-to-html.js"></script>
+  <script src="systemjs.config.js"></script>
+  <script>
+    System.import('main.ts').catch(function (err) {
+      console.error(err);
+    });
+    
+    var debugToHTML = new DebugToHTML('debugView');
+  </script>
+</head>
+
+<body>
+  <app-root></app-root>
+</body>
+
+</html>

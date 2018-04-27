@@ -1,0 +1,66 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#">Simple Angular Jwt Auth - Sample Project</a>
+</nav>
+<div style="padding: 25px;">
+  <div class="row">
+    <div class="col-sm-6">
+      <form style="padding: 25px; border: 1px solid rgba(0, 0, 0, 0.1);">
+        <div class="form-group row">
+          <label class="col-sm-4 col-form-label" for="usernameInputArea">Username</label>
+          <div class="col-sm-8">
+            <input #username type="text" class="form-control" id="usernameInputArea" placeholder="user-1 or user-2">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label class="col-sm-4 col-form-label" for="passwordInputArea">Password</label>
+          <div class="col-sm-8">
+            <input #password type="password" class="form-control" id="passwordInputArea" placeholder="1234">
+          </div>
+        </div>
+        <div class="form-group row">
+          <div class="col-sm-12">
+            <button type="button" class="btn btn-primary form-control" (click)="sendLogin(username.value, password.value)">Login</button>
+          </div>
+        </div>
+        <div class="form-group row">
+          <div class="col-sm-12">
+            <button type="button" class="btn btn-info form-control" (click)="isLoggedIn()">Is Logged In</button>
+          </div>
+        </div>
+        <div class="form-group row">
+          <div class="col-sm-12">
+            <button type="button" class="btn btn-warning form-control" (click)="getSecuredResource()">Get Secured</button>
+          </div>
+        </div>
+        <div class="form-group row">
+          <div class="col-sm-12">
+            <button type="button" class="btn btn-danger form-control" (click)="logOut()">LogOut</button>
+          </div>
+        </div>
+      </form>
+      <div style="padding: 25px; border: 1px solid rgba(0, 0, 0, 0.1);">
+        <div class="row">
+          <div class="col-sm-6">
+            <h5>User Role is: {{userRole}}</h5>
+          </div>
+          <div class="col-sm-6">
+            <h5>permissions.canEdit: {{permissions.canEdit}}</h5>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-6">
+      <div style="padding: 25px; border: 1px solid rgba(0, 0, 0, 0.1);">
+        <h3>Time to expire access token
+          <span class="badge badge-secondary">{{accessTokenCountDown}} seconds</span> 
+        </h3>
+        <h3>Time to expire refresh token
+          <span class="badge badge-secondary">{{refreshTokenCountDown}} seconds</span>
+        </h3>
+      </div>
+      <div id="debugView" style="padding: 25px; border: 1px solid rgba(0, 0, 0, 0.1); height: 320px; overflow-y:scroll;">
+
+      </div>
+    </div>
+  </div>
+</div>
